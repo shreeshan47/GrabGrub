@@ -1,5 +1,5 @@
 import styles from "@/styles/Slider.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Slider = () => {
     const images = [
