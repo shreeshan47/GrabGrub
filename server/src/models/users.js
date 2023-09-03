@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-const regsitrationSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     phoneNumber: Number,
     password: String,
 });
 
-const Users = mongoose.model('Users', regsitrationSchema);
+
+const Users = mongoose.model('Users', userSchema);
 module.exports = Users

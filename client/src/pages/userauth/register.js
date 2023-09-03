@@ -36,6 +36,7 @@ const Registration = () => {
           msgLabel: result.msg,
           msgType: response.status == 409 ? "error" : "success",
         });
+        console.log("Success posting data:", response.status )
       }
     } catch (error) {
       setResponseMsg({ msgLabel: "Something went wrong", msgType: "error" });
@@ -46,7 +47,7 @@ const Registration = () => {
 
 return(
   <div>
-    <h1>Signup</h1>
+    <h1>Register</h1>
     <Formik
       initialValues={{
         phoneNumber: "",

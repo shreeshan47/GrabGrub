@@ -1,22 +1,15 @@
 import '@/styles/globals.css'
-import '@/components/Layout'
-import Layout from '@/components/Layout'
-import Head from "next/head"; 
-
+import { Provider } from "react-redux";
+import { persistor, store } from '../redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 export default function MyApp({ Component, pageProps }) {
-  return (
-    <>
-    <Layout>
-      <Head>
-        <title>Grab Grub : Satisfy Your Cravings, Instantly!</title>
-        <meta
-          name="description"
-          content="Grab Grub , Best Food Delivery in Nepal"
-        />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
-    </>
-  )
+    return (
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+           
+                    <Component {...pageProps} />
+            
+            </PersistGate>
+        </Provider>
+    )
 }
